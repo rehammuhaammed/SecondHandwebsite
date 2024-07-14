@@ -1,5 +1,5 @@
-# Sechand
-
+# SecondHand 
+This site is where Second Hand cars are bought and sold, and the seller and buyer can communicate with each other through the site via the chat inside it.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
 
 ## Development server

@@ -1,0 +1,218 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+header{
+  background-color: #ffffff;
+  color:  #2B2A4C;
+  padding: 1%;
+  font-size: x-large;
+  font-family: sans-serif;
+  margin-left:-2%;
+  margin-top: -1%;
+}
+a{
+  color:  #2B2A4C;
+  text-decoration: none;
+  margin-right: 6%;
+}
+.hov:hover , .fa-user:hover{
+  box-shadow: 0px 2px 0px 0px #5e5d8d;
+  color: #5e5d8d;
+}
+.links{
+  margin-left: 5%;
+}
+.com_name{
+  margin-left: 2%;
+  font-size: 200%;
+  font-family: "Pacifico", cursive;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.sear{
+  display: block;
+}
+.carl{
+  font-family: sans-serif;
+  margin-right: 1%;
+  font-size: large;
+}
+.search{
+  padding: 0.4%;
+  border-radius: 3px;
+  border: 0.5px #a8a8a8 solid;
+  width: 250px;
+  text-align: center;
+  font-size: large;
+  color: #3d3d3d;
+}
+.search option{
+  font-size: large;
+}
+.search:hover {
+  box-shadow: 1px 2px 2px 2px #5e5d8d;
+}
+
+.container {
+  margin-top: 30px;
+  width: 300px;
+  background-color:#fcfcfc;
+  transition: 200ms ease-in-out;
+  border-radius: 10px;
+  display: inline-block;
+  flex-direction: column;
+  margin-left: 20px;
+  border: 0.5px #bdbdbd solid;
+  margin-right: 30px;
+  height: 355px;
+  position: relative;
+  font-family: sans-serif;
+  box-shadow: 2px 2px 3px 3px #a8a8a8;
+  cursor: pointer;
+}
+.container .layer:hover {
+  box-shadow: 0px 0px 20px 1px #9796963f;
+  border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+h2{margin-top: 2%; font-size: medium;}
+.fa-heart{ float: right;}
+.fa-heart {
+  cursor: pointer; /* Shows a pointer cursor on hover to indicate clickability */
+  transition: transform 0.2s; /* Smooth transition for visual feedback */
+}
+
+.fa-heart:hover {
+  transform: scale(1.1); /* Slightly enlarges the icon on hover */
+}
+
+p {
+  color: black;
+  padding-left: 2%;
+}
+.name,.kilo,.trans,.year{color: #575757;}
+.kilo,.trans,.year{position: absolute;top: 90%;}
+.year{left: 42%;}
+.trans{left: 65%;}
+.name{margin-top: -1%; font-size: larger;}
+.feedback-list{
+  display: flex;
+  padding-left: 18%;
+  padding-bottom: 2%;
+}
+.car_img{
+  height: 350px;
+  width: 400px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.comments{
+  height: 349px;
+  width: 400px;
+  border: 0.5px #a8a8a8 solid;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.brand , span{padding-left: 2%;} 
+
+.info {
+  width: 80%;
+  padding-left: 8%;
+}
+.comm{
+  font-family: sans-serif;
+  width: 80%;
+  margin: auto;
+}
+.typing-indicator {
+  width: 60px;
+  height: 30px;
+  position: relative;
+  z-index: 4;
+  margin-left: 10%;
+}
+
+.typing-circle {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #000;
+  left: 15%;
+  transform-origin: 50%;
+  animation: typing-circle7124 0.5s alternate infinite ease;
+}
+
+@keyframes typing-circle7124 {
+  0% {
+    top: 20px;
+    height: 5px;
+    border-radius: 50px 50px 25px 25px;
+    transform: scaleX(1.7);
+  }
+
+  40% {
+    height: 8px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+
+  100% {
+    top: 0%;
+  }
+}
+
+.typing-circle:nth-child(2) {
+  left: 45%;
+  animation-delay: 0.2s;
+}
+
+.typing-circle:nth-child(3) {
+  left: auto;
+  right: 15%;
+  animation-delay: 0.3s;
+}
+
+.typing-shadow {
+  width: 5px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 30px;
+  transform-origin: 50%;
+  z-index: 3;
+  left: 15%;
+  filter: blur(1px);
+  animation: typing-shadow046 0.5s alternate infinite ease;
+}
+
+@keyframes typing-shadow046 {
+  0% {
+    transform: scaleX(1.5);
+  }
+
+  40% {
+    transform: scaleX(1);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scaleX(0.2);
+    opacity: 0.4;
+  }
+}
+
+.typing-shadow:nth-child(4) {
+  left: 45%;
+  animation-delay: 0.2s;
+}
+
+.typing-shadow:nth-child(5) {
+  left: auto;
+  right: 15%;
+  animation-delay: 0.3s;
+}
+.fa-regular{
+  color:#5e5d8d;
+  font-size: 130%;
+  float: right;
+}

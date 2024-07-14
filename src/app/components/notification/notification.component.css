@@ -1,0 +1,233 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+header{
+  background-color: #ffffff;
+  color:  #2B2A4C;
+  padding: 1%;
+  font-size: x-large;
+  font-family: sans-serif;
+  margin-top: -1%;
+}
+a{
+  color:  #2B2A4C;
+  text-decoration: none;
+  margin-right: 6%;
+}
+.hov:hover {
+  box-shadow: 0px 2px 0px 0px #5e5d8d;
+  color: #5e5d8d;
+}
+.links{
+  margin-left: 8%;
+}
+.com_name{
+  margin-left: 10px;
+  font-size: 200%;
+  font-family: "Pacifico", cursive;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.sear{
+  display: block;
+}
+.carl{
+  font-family: sans-serif;
+  margin-right: 1%;
+  font-size: large;
+}
+.search{
+  padding: 0.4%;
+  border-radius: 3px;
+  border: 0.5px #a8a8a8 solid;
+  width: 250px;
+  text-align: center;
+  font-size: large;
+  color: #3d3d3d;
+}
+.search option{
+  font-size: large;
+}
+.search:hover {
+  box-shadow: 1px 2px 2px 2px #5e5d8d;
+}
+#active{
+  box-shadow: 0px 2px 0px 0px #5e5d8d;
+  color: #5e5d8d;
+}
+
+.page{
+  padding-left: 9%;
+}
+.container {
+  margin-top: 30px;
+  width: 300px;
+  background-color:#fcfcfc;
+  transition: 200ms ease-in-out;
+  border-radius: 10px;
+  display: inline-block;
+  flex-direction: column;
+  margin-left: 20px;
+  border: 0.5px #bdbdbd solid;
+  margin-right: 30px;
+  height: 355px;
+  position: relative;
+  font-family: sans-serif;
+  box-shadow: 2px 2px 3px 3px #a8a8a8;
+  cursor: pointer;
+}
+.container .layer:hover {
+  box-shadow: 0px 0px 20px 1px #9796963f;
+  border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+h2{margin-top: 2%; font-size: medium;}
+.fa-heart{ float: right;}
+.fa-heart {
+  cursor: pointer; /* Shows a pointer cursor on hover to indicate clickability */
+  transition: transform 0.2s; /* Smooth transition for visual feedback */
+}
+
+.fa-heart:hover {
+  transform: scale(1.1); /* Slightly enlarges the icon on hover */
+}
+
+p {
+  color: black;
+  padding-left: 2%;
+}
+.name,.kilo,.trans,.year{color: #575757;}
+.kilo,.trans,.year{position: absolute;top: 90%;}
+.year{left: 42%;}
+.trans{left: 65%;}
+.name{margin-top: -1%;}
+.car_img{
+  height: 190px;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px; 
+  display: block;
+}
+.brand , span{padding-left: 2%;} 
+.fa-regular,.fa-solid{
+  color:#5e5d8d;
+  font-size: 150%;
+  padding-right: 3px;
+}
+.price,.disprice{
+  font-size: large;
+  margin-top: -4%;
+}
+.price{color:  #59569c;}
+.disprice{color: #B31312;}
+.discount{color: #B31312; background-color: #dd9b9b; font-size: small; padding: 1%; float: right; border-top-left-radius: 3px; border-bottom-left-radius: 3px;}
+.custom-option {
+  position: relative;
+  display: block;
+  padding: 0 22px 0 22px;
+  font-size: 16px;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.custom-option:hover {
+  background-color: #ff0000;
+}
+.custom-option:focus{
+  background-color: #ff0000;
+}
+.olcards,
+.olcards * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.olcards {
+  list-style: none;
+  counter-reset: cardCount;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  --cardsGap: 1rem;
+  gap: var(--cardsGap);
+  padding-bottom: var(--cardsGap);
+}
+.olcards li {
+  counter-increment: cardCount;
+  display: flex;
+  color: white;
+  --labelOffset: 1rem;
+  --arrowClipSize: 1.5rem;
+  margin-top: var(--labelOffset);
+  width: 1200px;
+  border-radius: 8px;
+}
+.olcards li p{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.olcards li::before {
+  margin-top: 16px;
+  color: white ;
+  font-size: 2em;
+  font-weight: 700;
+  transform: translateY(calc(-1 * var(--labelOffset)));
+  margin-right: calc(-1 * var(--labelOffset));
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 0.5em;
+  height: 50px;
+}
+
+.olcards li .content {
+  background-color: var(--cardColor);
+  --inlinePadding: 1em;
+  --boxPadding: 0.5em;
+  display: grid;
+  padding: var(--boxPadding) calc(var(--inlinePadding) + var(--arrowClipSize))
+    var(--boxPadding) calc(var(--inlinePadding) + var(--labelOffset));
+  grid-template-areas:
+    "icon title"
+    "icon text";
+  gap: 0.25em 1em;
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--arrowClipSize)) 0,
+    100% 50%,
+    calc(100% - var(--arrowClipSize)) 100%,
+    calc(100% - var(--arrowClipSize)) calc(100% + var(--cardsGap)),
+    0 calc(100% + var(--cardsGap))
+  );
+  position: relative;
+}
+.olcards li .content::before {
+  content: "";
+  position: absolute;
+  width: var(--labelOffset);
+  height: var(--labelOffset);
+  background: var(--cardColor);
+  left: 0;
+  bottom: 0;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  filter: brightness(0.75);
+}
+.olcards li .content::after {
+  content: "";
+  position: absolute;
+  height: var(--cardsGap);
+  width: var(--cardsGap);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.25), transparent 50%);
+  left: 0;
+  top: 100%;
+}
+.olcards li .icon {
+  grid-area: icon;
+  align-self: center;
+  font-size: 2em;
+}
+.olcards li .content .text {
+  grid-area: text;
+}

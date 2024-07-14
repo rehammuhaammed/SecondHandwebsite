@@ -1,0 +1,35 @@
+
+<div class="all">
+  <header>
+    <span routerLink="/buy"class="com_name">
+        CarCraze
+    </span>
+    <span class="links">
+        <a href="mylist" class="hvr-bounce-to-top">My List</a>
+        <a href="wishlist" class="hvr-bounce-to-top">Wishlist</a>
+        <a href="purchases" class="hvr-bounce-to-top">Purchases</a>
+        <a href="feedbacks" class="hvr-bounce-to-top">FeedBacks</a>
+        <a href="notification" class="hvr-bounce-to-top">Notification</a>
+        <a href="/" class="hvr-bounce-to-top">Logout</a>
+    </span>
+  </header>
+<div class="Pinfo">
+  <div class="intro">
+  <div class="image_title">
+    <i class="fa-regular fa-user" style="font-size: 550% " ></i>
+  </div>
+    <div *ngIf="userData$ | async as userData">
+      <h5> Name : </h5>
+      <p class="info">  {{ userData[0].name }} </p>
+      <h5>  Email:</h5>
+      <p class="info"> {{ userData[0].email }}</p>
+      <h5>  Phone Number:</h5>
+      <p class="info"> {{ userData[0].phone_num }}</p>
+    </div> 
+  </div>
+</div>
+
+
+</div>
+
+

@@ -1,0 +1,82 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+header{
+    background-color: #ffffff;
+    color:  #2B2A4C;
+    padding: 1%;
+    font-size: x-large;
+    font-family: sans-serif;
+    margin-top: -1%;
+}
+a{
+    color:  #2B2A4C;
+    text-decoration: none;
+    margin-right: 8%;
+}
+.fa-user:hover{
+    font-size: x-large;
+    color: #4b49af;
+}
+    
+.links{
+    margin-left: 18%;
+}
+.com_name{
+    margin-left: 2%;
+    font-size: 200%;
+    font-family: "Pacifico", cursive;
+    font-weight: bolder;
+    cursor: context-menu;
+}
+.wel_image{
+    width: 250px;
+    height: 250px ;
+    display: inline;
+}
+.wel_image img{
+    width: 100%;
+    height: 450px ;
+}
+.wel_intro{
+    width: 350px;
+    position: absolute;
+    top: 30%;
+    left: 3%;
+    color: white;
+}
+.outinto{font-size: 250%;}
+.intointo{font-size: larger;}
+.intro{
+    position: relative;
+    font-family: sans-serif;
+    
+}
+.btn_buy,.btn_sell{
+    padding: 3%;
+    border-radius: 7px;
+    color: #ffffff;
+    width: 35%;
+    font-size: larger;
+    margin-right: 2%;
+    margin-top: 10%;
+    transition: 400ms;
+}
+.btn_buy{
+    background-color: #2B2A4C;
+    border: 1px #2B2A4C solid;
+}
+.btn_buy:hover{
+    background-color: #EEE2DE;
+    color: #5e5d8d;
+    border: 1px solid #5e5d8d;
+}
+.btn_sell:hover{
+    background-color: #2B2A4C;
+    color: white;
+    border: 1px #2B2A4C solid;
+}
+.btn_sell{
+    background-color: #EEE2DE;
+    color: #000;
+    border: 1px #EEE2DE solid;
+}

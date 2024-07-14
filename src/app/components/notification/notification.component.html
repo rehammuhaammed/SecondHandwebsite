@@ -1,0 +1,25 @@
+<div class="all">
+    <header>
+        <span routerLink="/buy" class="com_name">
+            CarCraze
+        </span>
+        <span class="links">
+            <a href="mylist" class="hvr-bounce-to-top">My List</a>
+        <a href="wishlist" class="hvr-bounce-to-top">Wishlist</a>
+        <a href="purchases" class="hvr-bounce-to-top">Purchases</a>
+        <a href="feedbacks" class="hvr-bounce-to-top">FeedBacks</a>
+        <a href="notification" class="hvr-bounce-to-top" id="active">Notification</a>
+        <a href="/" class="hvr-bounce-to-top">Logout</a>
+        </span>
+    </header>
+    <div class="notifications">
+        <ol class="olcards" *ngFor="let notification of notifications" >
+            <li style="background-color:#5e5d8d">
+                <div class="content">
+                    <div class="icon">😀</div>
+                    <div class="text"><p> {{ notification.message }} </p></div>
+            </div>
+            </li>
+            </ol>
+    </div>
+</div>

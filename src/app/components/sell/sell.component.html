@@ -1,0 +1,54 @@
+<header>
+    <a routerLink="/welcome"><span class="com_name">
+        CarCraze
+        </span>
+    </a>
+    <span class="links">
+        <a href="buy" class="hvr-bounce-to-top" >Buy</a>
+        <a href="sell" class="hvr-bounce-to-top" id="active">Sell</a>
+        <a href="profile"><i class="fa-regular fa-user" style="font-size: x-large;" ></i></a>
+    </span>
+</header>
+<div class="background">
+    <div class="sell_form">
+        <div class="position">
+            <div style="text-align: center;">
+                <h1>Sell Your Car </h1>
+            </div>
+            <label>Brand</label>
+            <input  type="text" required [(ngModel)]="brand" class="in">
+            <label>Model  </label>
+            <input  type="text" required [(ngModel)]="model" class="in">
+            <label>Year  </label>
+            <input  type="number" required [(ngModel)]="year" class="in">
+            <label>Price  </label>
+            <input  type="number" required [(ngModel)]="price" class="in">
+            <label>Kilometers  </label>
+            <input  type="number" required [(ngModel)]="kilometer" class="in">
+            <label>Transmission  </label>
+            <input  type="text" required [(ngModel)]="transmission" class="in">
+            <label>Phone Number  </label>
+            <input  type="number" required [(ngModel)]="phone_number" class="in">
+            <label>Location  </label>
+            <input  type="text" required [(ngModel)]="location" class="in">
+            <div style="text-align:center">
+                <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+                <div class="box_image" ><img [src]="url"  *ngIf="url" class="image">
+                </div>
+                    <div class="uploadLabel">   
+                        <input #photo type="file" (change)="selectFile($event)" accept="image/*" class="uploadButton"/> 
+                        <button type="button" (click)="uploadimage()" class="uploadbtn">
+                            <span>
+                                Save Photo
+                            </span>
+                        </button>           
+                    </div>    
+            </div>
+            <button value="submit" class="sub" (click)="addCar()" >
+                <span class="submit">
+                    Submit
+                </span>
+            </button>   
+        </div>
+    </div>
+</div>

@@ -1,0 +1,221 @@
+header{
+    background-color: #ffffff;
+    color:  #2B2A4C;
+    padding: 1%;
+    font-size: x-large;
+    font-family: sans-serif;
+    margin-top: -1%;
+}
+a{
+    color:  #2B2A4C;
+    text-decoration: none;
+    margin-right: 8%;
+}
+.hov:hover , .fa-user:hover{
+    box-shadow: 0px 2px 0px 0px #5e5d8d;
+    color: #5e5d8d;
+}
+.links{
+    margin-left: 33%;    
+}
+.com_name{
+    margin-left: 2%;
+    font-size: 200%;
+    font-family: "Pacifico", cursive;
+    font-weight: bolder;
+}
+.sear{
+    margin-left: -5%;
+}
+.search{
+    padding: 0.32%;
+    border-radius: 3px;
+    border: 0.5px #a8a8a8 solid;
+    width: 250px;
+}
+.search:hover {
+    box-shadow: 1px 2px 2px 2px #5e5d8d;
+}
+
+.background{
+    background-image: url(../../../assets/1-7-1024x576.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 950px;
+    margin-top: 3%;
+    border-radius: 4px;
+    position: relative;
+    font-family: sans-serif;
+}
+.sell_form{
+    background-color: #ffffff;
+    width: 400px;
+    border-radius: 13px;
+    border: 1px #d1d1d1 solid;
+    margin-left: 7%;
+    position: absolute;
+    top: -4%;
+    font-family: sans-serif;
+}
+
+/*
+input{
+    display: block;
+    padding: 1%;
+    border: 1px rgb(160, 160, 160) solid;
+    border-radius: 6px 3px 6px 3px;
+    width: 350px;
+    height: 22px;   
+}
+*/
+
+input {
+    height: 28px;
+    width: 300px;
+    border-radius: 8px;
+    border: 1px solid #dee2e2;
+    outline: none;
+    transition: 200ms ease-in;
+    padding-left: 1rem;
+}
+
+.in:focus {
+    border-top: none;
+    border-bottom: 4px solid #265073;
+}
+
+.in::placeholder {
+    color: #265073;
+    opacity: 0.5;
+}
+label{
+    display: block;
+    padding-top: 5%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    font-family:  sans-serif;
+    font-weight: 200;
+    font-style: normal
+}
+.position{
+    padding: 5%;
+}
+h1{
+    font-family: Dancing Script;
+    font-size: 250%;
+    color: #ffffff;
+    background-color: #5e5d8d;
+    padding: 1%;
+    padding-left: 4%;
+    padding-right: 2%;
+    border-radius:5px ;
+}
+/*
+.sub{
+    padding: 2%;
+    background-color: #0e293f;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    font-size: 19px;
+    width: 358px;
+    border: 1px solid #ccc;
+    font-family: "Rubik", fantasy;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+*/
+.sub {
+    width: 90px;
+    height: 40px;
+    position: relative;
+    font-family: sans-serif;
+    color: white;
+    font-weight: 600;
+    background-color: #2B2A4C;
+    border: none;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    transition: all ease 100ms;
+    border: 1px solid #2B2A4C;
+    width: 360px;
+    height: 50px;
+    margin-left: 2px;
+    margin-top: 2px;
+  }
+  
+.sub:hover {
+    background-color: white;
+    color: #5e5d8d;
+    border: 2px solid #5e5d8d;
+}
+  
+.sub:active{
+    box-shadow: 1px 1px black;
+    transform: translate(3px, 3px);
+} 
+.submit {
+    transition: all ease 100ms;
+    opacity: 100%;
+    padding-top: 0%;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+.image{
+    height: 200px;
+    width: 200px;
+}
+.box_image{
+    height: 200px;
+    width: 200px;
+    margin-top: 3%;
+    background-color: #e9e9e9;
+    border: 1px #e9e9e9 solid;
+    border-radius: 5px;
+    position: relative; 
+    left: 76px;
+}
+
+.uploadButton{
+    margin-top:11px;
+    background-color: #2B2A4C;
+    color: white;
+    padding-top: 2%;
+    width: 325px;
+    height: 30px;
+    display: block;
+    margin-left: 0.5%;
+}
+.uploadButton:hover{
+    background-color: white;
+    color: #5e5d8d;
+    border: 2px solid #5e5d8d;
+}
+.uploadLabel {
+    display: flex;
+}
+.uploadbtn{
+    margin-top: 12.5px;
+    width: 150px;
+    height: 38px;
+    background-color: #2B2A4C;
+    color: white;
+    border-radius: 6px;
+    border: 1px #2B2A4C solid;
+}
+.uploadbtn:hover{
+    border: 2px #5e5d8d solid;
+    background-color: white;
+    color: #5e5d8d;
+}
+.uploadbtn:active{
+    box-shadow: 1px 1px black;
+    transform: translate(3px, 3px);
+}
+.uploadbtn span {
+text-align: center;
+font-size: 16px;
+font-family: sans-serif;
+}

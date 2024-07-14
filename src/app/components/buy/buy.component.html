@@ -1,0 +1,42 @@
+<header>
+    <a routerLink="/welcome"><span class="com_name">
+        CarCraze
+    </span></a>
+    <span class="links">
+        <a href="buy" class="hvr-bounce-to-top" id="active">Buy</a>
+        <a href="sell" class="hvr-bounce-to-top" >Sell</a>
+        <a href="profile"><i class="fa-regular fa-user" style="font-size: x-large;" ></i></a>
+    </span>
+</header>
+<div class="page">
+    <span class="sear">
+        <label for="cars" class="carl">Search By</label>
+        <select name="cars" id="cars" class="search" (change)="sortCars($any($event.target).value)">
+            <option value="recent" class="custom-option "> Recently - Added</option>
+            <option value="pHtoL" class="custom-option">Price - Highest To Lowest</option>
+            <option value="pLtoH" class="custom-option">Price - Lowest To Highest</option>
+            <option value="kmHtoL" class="custom-option">KMs - Highest To Lowest</option>
+            <option value="kmLtoH" class="custom-option">KMs - Lowest To Highest</option>
+            <option value="yNtoo" class="custom-option">Year - New To Old</option>
+            <option value="yOtoN" class="custom-option">Year - old To New</option>
+        </select>
+    </span>
+    <div class="container" *ngFor="let car of CarsList">
+        <div class="layer">  
+        <div (click)="viewDetails(car.id)" class="image">
+            <img  [src]="car.image_url" alt="" class="car_img">
+        </div>
+        <div class="info">
+            <h2 class="brand">{{car.brand.toLocaleUpperCase()}}
+                <i *ngIf="!likedCars[car.id]" class="fa-regular fa-heart" (click)="toggleLike(car.id,car)"></i>
+                <i *ngIf="likedCars[car.id]" class="fa-solid fa-heart" (click)="toggleLike(car.id,car)"></i></h2>
+            <p class="name">{{car.model.toLocaleUpperCase()}}</p>
+            <p class="disprice"><del>{{car.price+50000}}EGP</del><span class="discount">50k Off Limited Offer</span></p>
+            <p class="price">{{car.price}}EGP</p>
+            <span class="kilo"><i class="fa-regular fa-clock"></i>{{car.kilometer}} KM </span>
+            <span class="year"><i class="fa-regular fa-calendar" ></i>{{car.year}}</span>
+            <span class="trans"><i class="fa-solid fa-code-branch" ></i>{{car.transmission}}</span>
+        </div>
+    </div>
+</div>
+</div>

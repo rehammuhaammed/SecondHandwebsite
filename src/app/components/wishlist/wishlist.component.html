@@ -1,0 +1,45 @@
+
+<header>
+  <span routerLink="/buy" class="com_name">
+    CarCraze
+  </span>
+  <span class="links">
+    <a href="mylist" class=" hvr-bounce-to-top">My List</a>
+    <a href="wishlist" class="hvr-bounce-to-top" id="active">Wishlist</a>
+    <a href="purchases" class="hvr-bounce-to-top">Purchases</a>
+    <a href="feedbacks" class="hvr-bounce-to-top">FeedBacks</a>
+    <a href="notification" class="hvr-bounce-to-top">Notification</a>
+    <a href="/" class="hvr-bounce-to-top">Logout</a>
+  </span>
+</header>
+  <div class="page">
+    <div *ngIf="userData$ | async as userData; else loading">
+      <div class="container" *ngFor="let car of userData">
+        <div class="layer">
+          <div  class="image">
+            <img [src]="car.image_url" alt="" class="car_img">
+          </div>
+          <div class="info">
+              <h2 class="brand">{{car.brand.toLocaleUpperCase()}}
+                <i class="fa-solid fa-heart" (click)="removeFromWishlist(car.id)"></i>
+              </h2>
+            <h2 class="brand">{{ car.brand }}</h2>
+            <p class="name">{{ car.name }}</p>
+            <p class="disprice"><del>{{ car.price + 50000 }}EGP</del></p>
+            <p class="price">{{ car.price }}EGP</p>
+            <span class="kilo"><i class="fa-regular fa-clock"></i>{{ car.kilometer }} KM</span>
+            <span class="year"><i class="fa-regular fa-calendar"></i>{{ car.year }}</span>
+            <span class="trans"><i class="fa-solid fa-code-branch"></i>{{ car.transmission }}</span>
+          </div>
+        </div>
+    </div>
+  </div>
+  <ng-template #loading><div class="typing-indicator">
+    <div class="typing-circle"></div>
+    <div class="typing-circle"></div>
+    <div class="typing-circle"></div>
+    <div class="typing-shadow"></div>
+    <div class="typing-shadow"></div>
+    <div class="typing-shadow"></div>
+</div></ng-template>
+</div>

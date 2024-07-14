@@ -1,0 +1,86 @@
+/* styles.css */
+
+/* Global styles */
+
+  /* Header styles */
+  
+ 
+  header{
+    background-color: #ffffff;
+    color:  #2B2A4C;
+    padding: 1%;
+    font-size: x-large;
+    font-family: sans-serif;
+    margin-top: -1%;
+  }
+  a{
+    color:  #2B2A4C;
+    text-decoration: none;
+    margin-right: 6%;
+  }
+  .hov:hover {
+    box-shadow: 0px 2px 0px 0px #5e5d8d;
+    color: #5e5d8d;
+  }
+  .links{
+    margin-left: 8%;
+  }
+  .com_name{
+    margin-left: 2%;
+    font-size: 200%;
+    font-family: "Pacifico", cursive;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+    /* Page content styles */
+    
+    .Pinfo {
+      height: 500px;
+      width: 550px;
+      border: 0.5px #b3b3b3 solid;
+      border-radius: 7px;
+      margin-left: 27%;
+      box-shadow: 2px 4px 4px 4px #5e5d8d;
+      position: absolute;
+      background-color: white;
+    }
+    
+    .Pinfo h1 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      
+    }
+    
+    .Pinfo h5 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+    
+    .Pinfo p {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .image_title{
+     height: 100px;
+     width: 100px;
+     margin: auto;
+  
+    }
+  .info{
+    border: 1Px solid #5e5d8d ;
+    padding: 1%;
+    border-radius: 5px;
+  
+  }
+  .intro{
+    width: 80%;
+    margin-left: 8%;
+  }
+  .image{
+    height: 130px;
+    width: 130px;
+  }
+  .fa-regular{
+    color: #5e5d8d;
+    margin: 19%;
+  }

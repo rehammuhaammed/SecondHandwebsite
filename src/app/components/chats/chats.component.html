@@ -1,0 +1,46 @@
+<header class="header">
+  <a routerLink="/welcome"><span class="com_name">
+      CarCraze
+  </span></a>
+  <span class="links">
+    <a href="buy" class="hvr-bounce-to-top" >Buy</a>
+    <a href="sell" class="hvr-bounce-to-top">Sell</a>
+    <a href="profile"><i class="fa-regular fa-user" style="font-size: x-large;" ></i></a>
+  </span>
+</header>
+<div class="container">
+    <div class="chatList">
+        <div class="search">                  
+              <nav *ngIf="userData$ | async as userData">
+                <label for="touch"><span id="span"> USERS </span></label>               
+                <input type="checkbox" id="touch"> 
+                <ul class="slide" *ngIf="filteredUsers$ | async as filteredUsers">
+                    <div class="box" *ngFor="let user of filteredUsers" >
+                        <li (click)="startChat(user,userData[0].name)" id="li" [value]="user.uid"><p id="para">{{ user.name }}</p>
+                        </li> 
+                    </div>
+                </ul>          
+              </nav> 
+            </div>
+        </div>
+        <div class="messages" *ngIf="selectedUserId">  
+    <div class="card" >
+      <div class="chat-header">{{ selectedUserName }}</div>
+      <div class="chat-window" >
+        <ul class="message-list" >
+            <li *ngFor="let send of messages"> <p id="item">"{{send}}"</p></li>
+        </ul>
+      </div>
+      <div class="chat-input" *ngIf="userData$ | async as userData">
+        <input type="text" class="message-input" placeholder="Type your message here" [(ngModel)]="newMessage">
+        <button class="send-button" (click)="sendMessage(userData[0].name)">Send</button>
+      </div>
+    </div>
+    <div *ngIf="selectedUserName" class="selected-user">
+      <img src="../../../assets/picture.png" width="80px" height="70px" alt="">
+        <p>{{ selectedUserName }}'s CHAT </p>
+    </div>
+  </div>
+</div>
+
+

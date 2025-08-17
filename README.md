@@ -1,27 +1,33 @@
-# SecondHand 
-This site is where Second Hand cars are bought and sold, and the seller and buyer can communicate with each other through the site via the chat inside it.
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
 
-## Development server
+# SecondHand Website
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+A modern Angular-based web application for buying and selling cars, powered by Firebase for backend services. This project supports dynamic product listings, user authentication, and Angular Universal for server-side rendering (SSR).
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Buy & Sell Cars:** Users can browse available cars and post their own listings.
+- **User Authentication:** Secure login and signup functionality.
+- **Feedback System:** Users can leave feedback for products or sellers.
+- **Responsive Design:** Works on desktop and mobile devices.
+- **Angular Universal (SSR):** Faster page loads and better SEO.
+- **Firebase Integration:** Firestore database and authentication.
 
-## Build
+## Tech Stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Frontend:** Angular 19
+- **Backend/Server:** Node.js + Angular Universal (SSR)
+- **Database:** Firebase Firestore
+- **Authentication:** Firebase Auth
+- **Hosting/Deployment:** Vercel
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone the repository:
 
-## Running end-to-end tests
+   ```bash
+   git clone https://github.com/rehammuhaammed/SecondHandwebsite.git
+   cd SecondHandwebsite
+   npm install
+   ng serve
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

@@ -5,4 +5,5 @@ export interface ProfileUser {
     lastName?: string;
     displayName?: string;
     phone?: string;
+    hasNewMessage?: boolean;
 }

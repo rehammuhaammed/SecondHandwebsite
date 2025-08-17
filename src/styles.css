@@ -37,12 +37,16 @@ a{
     transition: color 0.3s ease;
     cursor: pointer;
 }
+
 .links a i{
     font-size: 20px;
     transition: all ease-in 0.2s;
 }
+
 .links a i:hover{
-   transform: scale(1.05);
+   transform: scale(1.07);
+   color: #B31312;
+   
 }
 
 .links a:hover {

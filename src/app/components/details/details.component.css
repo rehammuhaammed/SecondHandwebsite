@@ -189,26 +189,7 @@ textarea {
   background-color: rgba(179, 19, 18,0.9);
 }
 
-/* ===== Icon Bar ===== */
-.icon-bar {
-  position: fixed;
-  bottom: 2%;
-  right: 2%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
 
-.icon-bar a {
-  text-align: center;
-  font-size: 2.2rem;
-  color: green;
-  transition: all 0.3s;
-}
-
-.icon-bar a:hover {
-  transform: scale(1.3);
-}
 /* ===== Rating Stars ===== */
 .rating {
   display: flex;
@@ -222,23 +203,23 @@ textarea {
 }
 
 .rating label {
-  font-size: 2.2rem;       /* حجم أكبر */
-  color: #ccc;             /* لون افتراضي */
+  font-size: 2.2rem;       
+  color: #ccc;             
   cursor: pointer;
   transition: color 0.3s;
 }
 
 .rating label::before {
-  content: '\2605';        /* رمز النجمة */
+  content: '\2605';        
   display: inline-block;
 }
 
 .rating input:checked ~ label,
 .rating label:hover,
 .rating label:hover ~ label {
-  color: rgb(232, 171, 41);          /* لون مميز عند التحديد أو hover */
+  color: rgb(232, 171, 41);        
 }
-/* رسالة النجاح */
+
 .feedback-msg.success {
   background-color: #25b312; /* أخضر */
   color: white;
@@ -252,7 +233,7 @@ textarea {
   transition: opacity 0.5s, transform 0.5s;
 }
 
-/* رسالة الفشل */
+
 .feedback-msg.error {
   background-color: #d12b25; /* أحمر */
   color: white;

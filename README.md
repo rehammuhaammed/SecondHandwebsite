@@ -18,8 +18,8 @@ A modern Angular-based web application for buying and selling cars, powered by F
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | Angular 19 |
-| Backend/Server | Node.js + Angular Universal (SSR) |
+| Frontend | Angular 17 |
+| Backend/Server | Firebase (Firestore + Auth + Cloud Functions)|
 | Database | Firebase Firestore |
 | Authentication | Firebase Auth |
 | Hosting/Deployment | Vercel |

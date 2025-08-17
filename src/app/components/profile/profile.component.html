@@ -1,0 +1,32 @@
+
+<div class="all">
+<app-header></app-header>
+<div class="profile-page">
+  <div class="profile-card">
+    <div class="profile-image">
+      <i class="fa-regular fa-user"></i>
+    </div>
+    <h2>User Information</h2>
+
+    <div class="profile-info" *ngIf="userData$ | async as userData">
+      <div class="info-row">
+        <span class="label">Name:</span>
+        <span class="value">{{ userData[0]?.name }}</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Email:</span>
+        <span class="value">{{ userData[0]?.email }}</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Phone Number:</span>
+        <span class="value">{{ userData[0]?.phone_num }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+

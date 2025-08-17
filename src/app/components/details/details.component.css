@@ -1,0 +1,310 @@
+/* ===== General ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f6fa;
+  color: #333;
+}
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3%;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.com_name {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2B2A4C;
+  cursor: pointer;
+}
+
+.links a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #5e5d8d;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: #B31312;
+}
+
+.owner{
+  margin: 40px 0px 0px;
+  position: relative;
+  left: 215px;
+  color: #690b0b;
+  width: fit-content;
+}
+
+/* ===== Container ===== */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1.5%;
+  max-width: 100%;
+}
+
+/* ===== Image Card ===== */
+.image {
+  flex-shrink: 0;
+}
+
+.image img {
+  width: 100%;
+  max-width: 670px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* ===== Info Card ===== */
+.card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info h2.brand {
+  margin-top: 0;
+  font-size: 1.6rem;
+  color: #B31312;
+  font-weight: 700;
+}
+
+.info p {
+  margin: 5px 0;
+  color: #575757;
+}
+
+.kilo, .year, .trans {
+  display: inline-block;
+  margin-right: 1rem;
+  color: #5e5d8d;
+  font-weight: 500;
+}
+
+.price {
+  color: #59569c;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.discount {
+  background-color: #ffe5e5;
+  color: #B31312;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ===== Buy Button ===== */
+.btn_buy {
+  background-color: #B31312;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn_buy:hover {
+  background-color: rgba(179, 19, 18,0.9);
+}
+
+/* ===== Feedback ===== */
+.feedback {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  max-width: 670px;
+}
+
+.feedback h2.head {
+  margin-bottom: 0.7rem;
+  color: #4c2a2a;
+  font-weight: 700;
+}
+
+textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  padding: 0.7rem;
+  resize: vertical;
+  font-size: 1rem;
+}
+
+/* ===== Send Button ===== */
+.btn_send {
+  background-color: #B31312;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn_send:hover {
+  background-color: rgba(179, 19, 18,0.9);
+}
+
+/* ===== Icon Bar ===== */
+.icon-bar {
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.icon-bar a {
+  text-align: center;
+  font-size: 2.2rem;
+  color: green;
+  transition: all 0.3s;
+}
+
+.icon-bar a:hover {
+  transform: scale(1.3);
+}
+/* ===== Rating Stars ===== */
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  gap: 0.3rem;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  font-size: 2.2rem;       /* حجم أكبر */
+  color: #ccc;             /* لون افتراضي */
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.rating label::before {
+  content: '\2605';        /* رمز النجمة */
+  display: inline-block;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: rgb(232, 171, 41);          /* لون مميز عند التحديد أو hover */
+}
+/* رسالة النجاح */
+.feedback-msg.success {
+  background-color: #25b312; /* أخضر */
+  color: white;
+  padding: 0.7rem 1rem;
+  border-radius: 7px;
+  margin-top: 1rem;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+/* رسالة الفشل */
+.feedback-msg.error {
+  background-color: #d12b25; /* أحمر */
+  color: white;
+  padding: 0.7rem 1rem;
+  border-radius: 7px;
+  margin-top: 1rem;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.page-msg {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 1000;
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0.95;
+  transition: all 0.3s ease;
+}
+
+.page-msg.success {
+  background-color: #1a8917; /* أخضر */
+}
+
+.page-msg.error {
+  background-color: #b31312; /* أحمر */
+}
+
+
+.feedback-msg.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .image img, .card {
+    max-width: 100%;
+  }
+}

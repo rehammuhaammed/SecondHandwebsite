@@ -1,0 +1,39 @@
+<div class="all">
+<app-header></app-header>
+
+  <div *ngIf="feedbacks$ | async as feedback; else loading">
+    <!-- Empty feedback case -->
+    <div *ngIf="feedback.length === 0" class="no-feedback">
+      <p>No feedback has been received on your cars yet 😅</p>
+    </div>
+
+    <!-- Feedback list -->
+    <div *ngFor="let feed of feedback" class="feedback-list">
+      <div class="image">
+        <img [src]="feed.image_url" class="car_img">
+      </div>
+      <div class="comments">
+        <div class="info">
+          <h1 class="brand">{{ feed.brand }}</h1>
+          <p class="name">{{ feed.model }}</p>
+          <hr>
+          <div *ngFor="let comment of feed.comments" class="comm">
+            <i class="fa-regular fa-comment"></i>  {{ comment }}
+            <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <div class="typing-indicator">
+      <div class="typing-circle"></div>
+      <div class="typing-circle"></div>
+      <div class="typing-circle"></div>
+      <div class="typing-shadow"></div>
+      <div class="typing-shadow"></div>
+      <div class="typing-shadow"></div>
+    </div>
+  </ng-template>
+</div>

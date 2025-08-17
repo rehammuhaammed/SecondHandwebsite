@@ -1,0 +1,176 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+
+/* === Search === */
+.page {
+  margin-top: 20px;
+  padding-left: 45px;
+  font-family: sans-serif;
+ 
+}
+.info-card{
+
+ margin-top: 50px;
+}
+
+.sear {
+  display: block;
+  margin-top: 20px;
+}
+
+.carl {
+  font-size: large;
+  margin-right: 10px;
+}
+
+.search {
+  padding: 0.4%;
+  border-radius: 3px;
+  border: 0.5px #a8a8a8 solid;
+  width: 250px;
+  text-align: center;
+  font-size: large;
+  color: #3d3d3d;
+}
+
+.search:hover {
+  box-shadow: 1px 2px 2px 2px #5e5d8d;
+}
+
+.search option {
+  font-size: large;
+}
+
+/* === Car Cards Redesigned === */
+.container {
+  margin-top: 30px;
+  width: 320px;
+  background: linear-gradient(145deg, #ffffff, #f3f3f3);
+  border-radius: 15px; 
+  overflow: hidden;
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 380px; 
+  position: relative;
+  font-family: sans-serif;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2); /* ظل أقوى عند hover */
+}
+
+.car_img {
+  height: 200px; 
+  width: 100%;
+  object-fit: cover; 
+  display: block;
+}
+
+.info {
+  padding: 10px 15px;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p {
+  font-size: 0.95rem;
+  margin: 5px 0;
+  color: #575757;
+}
+
+.price {
+  font-weight: bold;
+  color: #2B2A4C;
+}
+
+.disprice {
+  font-size: 0.85rem;
+  color: #B31312;
+  text-decoration: line-through;
+}
+
+.discount {
+  font-size: 0.75rem;
+  color: #ffffff;
+  background-color: #b52b27;
+  padding: 2px 6px;
+  border-radius: 5px;
+  float: right;
+}
+
+.fa-heart {
+  font-size: 1.3rem;
+  color: #b52b27;
+  transition: transform 0.2s;
+}
+
+.fa-heart:hover {
+  transform: scale(1.3);
+}
+
+.kilo, .year, .trans {
+  font-size: 0.85rem;
+  color: #3d3d3d;
+}
+
+.kilo { position: absolute; bottom: 10px; left: 10px; }
+.year { position: absolute; bottom: 10px; left: 120px; }
+.trans { position: absolute; bottom: 10px; right: 10px; }
+/* === Custom Dropdown === */
+.search {
+  width: 250px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #bdbdbd;
+  font-size: 1rem;
+  color: #2B2A4C;
+  background-color: #ffffff;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.search:hover {
+  border-color: #5e5d8d;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+/* Options */
+.search option {
+  padding: 10px;
+  background-color: #ffffff;
+  color: #2B2A4C;
+  font-size: 0.95rem;
+}
+
+.search option:hover {
+  background-color: #5e5d8d;
+  color: #ffffff;
+}
+
+/* === Custom Options === */
+.custom-option {
+  display: block;
+  padding: 0 22px;
+  font-size: 16px;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.custom-option:hover,
+.custom-option:focus {
+  background-color: #ff0000; 
+}

@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="page">
+   <h1 class="page-title">Your Listed Cars</h1>
+  <div *ngIf="userData$ | async as userData; else loading">
+
+    
+    <div *ngIf="userData && userData.length > 0; else noProducts">
+      <div class="products-container">
+        <div class="product-card" *ngFor="let car of userData">
+          <img [src]="car.image_url" alt="{{ car.name }}">
+          <div class="product-info">
+            <h3>{{ car.brand }} - {{ car.name }}</h3>
+            <p class="price">{{ car.price }} EGP </p>
+            <p>{{ car.kilometer }} KM | {{ car.year }} | {{ car.transmission }}</p>
+            <a href="feedbacks" class="comm">Comments 💬 </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <ng-template #noProducts>
+    <div class="no-products">
+      <p>Oops! You haven't listed any cars for sale yet.</p>
+      <p>If you want to sell a car, click the button below to add your first listing.</p>
+      <a routerLink="/sell" class="add-product-btn">Add Your First Product</a>
+    </div>
+  </ng-template>
+
+  <!-- حالة التحميل -->
+  <ng-template #loading>
+    <div class="typing-indicator">
+      <div class="typing-circle"></div>
+      <div class="typing-circle"></div>
+      <div class="typing-circle"></div>
+    </div>
+  </ng-template>
+</div>

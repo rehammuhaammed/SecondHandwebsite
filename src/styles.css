@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+ 
+    /* ===== Header ===== */
+header {
+    background-color: #ffffff;
+    color: #2B2A4C;
+    padding: 5px 30px;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+.com_name {
+    font-size: 2rem;
+    font-family: "Pacifico", cursive;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+/* Header Links */
+.links a {
+    text-decoration: none; 
+    color: #2B2A4C;
+    margin-right: 20px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+.links a i{
+    font-size: 20px;
+    transition: all ease-in 0.2s;
+}
+.links a i:hover{
+   transform: scale(1.05);
+}
+
+.links a:hover {
+    color: #B31312; 
+    box-shadow: none;
+    transform: none;
+}
+
+
+
+/* Responsive Header */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        font-size: 1rem;
+    }
+    .links {
+        margin-top: 10px;
+    }
+    .links a {
+        margin-right: 10px;
+    }
+}

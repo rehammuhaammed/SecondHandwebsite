@@ -1,0 +1,22 @@
+
+  <app-header></app-header>
+<div class="all">
+ <div class="notifications" *ngIf="notifications.length > 0; else emptyState">
+    <ol class="olcards">
+      <li *ngFor="let notification of notifications; let i = index" [style.animationDelay]="i * 0.3 + 's'">
+        <div class="text">
+          <p>😀 {{ notification.message }}</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <ng-template #emptyState>
+    <div class="empty">
+      <div class="no-notifications">
+      <p>You have no notifications yet 😅</p>
+    </div>
+    </div>
+  </ng-template>
+</div>
+ 

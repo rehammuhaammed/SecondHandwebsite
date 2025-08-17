@@ -1,0 +1,55 @@
+<div class="page">
+  <div class="card">
+    <h1 class="title">Login</h1>
+
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" novalidate>
+      
+      <!-- Email -->
+      <div class="form-group">
+        <label class="label">Email</label>
+        <input
+          type="email"
+          name="email"
+          class="input"
+          [(ngModel)]="email"
+          required
+          #emailRef="ngModel"
+        />
+        <div class="error-text" *ngIf="emailRef.invalid && emailRef.touched">
+          <span *ngIf="emailRef.errors?.['required']">Please enter your email.</span>
+          <span *ngIf="emailRef.errors?.['email']">Enter a valid email.</span>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label class="label">Password</label>
+        <input
+          type="password"
+          name="password"
+          class="input"
+          [(ngModel)]="password"
+          required
+          minlength="6"
+          #passRef="ngModel"
+        />
+        <div class="error-text" *ngIf="passRef.invalid && passRef.touched">
+          <span *ngIf="passRef.errors?.['required']">Please enter your password.</span>
+          <span *ngIf="passRef.errors?.['minlength']">At least 6 characters.</span>
+        </div>
+      </div>
+
+      <!-- Alerts -->
+      <div class="alert-box success" *ngIf="successMessage">{{ successMessage }}</div>
+      <div class="alert-box error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn" [disabled]="loginForm.invalid">Login</button>
+    </form>
+
+    <!-- Footer Link -->
+    <div class="footer-link">
+      <a href="register">Need an account? <span class="accent">Register</span></a>
+    </div>
+  </div>
+</div>

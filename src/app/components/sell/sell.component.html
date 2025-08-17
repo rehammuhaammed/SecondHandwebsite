@@ -1,0 +1,93 @@
+<header>
+    <a routerLink="/welcome"><span class="com_name">CarCraze</span></a>
+    <span class="links">
+        <a href="buy">Buy</a>
+        <a href="sell" id="active">Sell</a>
+        <a href="profile"><i class="fa-regular fa-user" style="font-size: x-large;"></i></a>
+    </span>
+</header>
+
+<div class="background ">
+    <div class="sell_form">
+
+        <div class="position">
+
+            <div style="text-align: center; grid-column: 1 / span 2;">
+                <h1>Sell Your Car</h1>
+            </div>
+
+            <!-- Form Fields with individual alerts -->
+            <div class="form-group">
+                <label>Brand</label>
+                <input type="text" required [(ngModel)]="brand" class="in">
+                <div *ngIf="fieldMsg.brand" class="field-alert">{{ fieldMsg.brand }}</div>
+            </div>
+
+            <div class="form-group">
+                <label>Model</label>
+                <input type="text" required [(ngModel)]="model" class="in">
+                <div *ngIf="fieldMsg.model" class="field-alert">{{ fieldMsg.model }}</div>
+            </div>
+
+            <div class="form-group">
+                <label>Year</label>
+                <input  required [(ngModel)]="year" class="in">
+                <div *ngIf="fieldMsg.year" class="field-alert">{{ fieldMsg.year }}</div>
+            </div>
+
+            <div class="form-group">
+                <label>Price</label>
+                <input type="number" required [(ngModel)]="price" class="in">
+                <div *ngIf="fieldMsg.price" class="field-alert">{{ fieldMsg.price }}</div>
+            </div>
+
+            <div class="form-group">
+                <label>Kilometers</label>
+                <input type="number" required [(ngModel)]="kilometer" class="in">
+                <div *ngIf="fieldMsg.kilometer" class="field-alert">{{ fieldMsg.kilometer }}</div>
+            </div>
+
+            <div class="form-group">
+                <label>Transmission</label>
+                <input type="text" required [(ngModel)]="transmission" class="in">
+                <div *ngIf="fieldMsg.transmission" class="field-alert">{{ fieldMsg.transmission }}</div>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="number" required [(ngModel)]="phone_number" class="in">
+                <div *ngIf="fieldMsg.phone_number" class="field-alert">{{ fieldMsg.phone_number }}</div>
+            </div>
+
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text" required [(ngModel)]="location" class="in">
+                <div *ngIf="fieldMsg.location" class="field-alert">{{ fieldMsg.location }}</div>
+            </div>
+
+            <!-- Image Preview -->
+            <div class="box_image">
+                <img [src]="url" *ngIf="url" class="image">
+            </div>
+
+            <!-- Upload Image -->
+            <div class="uploadLabel">   
+                <input #photo type="file" (change)="selectFile($event)" accept="image/*" class="uploadButton"/> 
+                <button type="button" (click)="uploadimage()" class="uploadbtn">
+                    <span>Save Photo</span>
+                </button>           
+            </div>    
+
+            <!-- Submit Button -->
+            <button class="sub" (click)="addCar()">
+                <span class="submit">Submit</span>
+            </button>
+
+            <!-- General message at the bottom -->
+            <div *ngIf="msg && !hasFieldError()" [ngClass]="{'form-alert-success': success, 'form-alert': !success}" class="form-message-bottom">
+                {{ msg }}
+            </div>
+
+        </div>
+    </div>
+</div>

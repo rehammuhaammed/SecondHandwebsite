@@ -1,0 +1,173 @@
+/* === Page Layout === */
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0e7ff, #fef9f9);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+/* === Background Layer === */
+.layer {
+  background-color: rgba(197, 197, 197, 0.18);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+/* === Card === */
+.card {
+  width: 400px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* === Title === */
+.title {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.2rem;
+  text-align: center;
+  color: #fff;
+  background: #5e5d8d;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* === Form Groups === */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+.input {
+  width: 100%;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  outline: none;
+  padding-left: 12px;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.input:focus {
+  border-color: #5e5d8d;
+  box-shadow: 0 0 6px rgba(94, 93, 141, 0.3);
+}
+
+/* === Error Text Under Input === */
+.error-text {
+  color: #d9534f;
+  font-size: 13px;
+  margin-top: 4px;
+  padding-left: 4px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid #d9534f;
+  background: #fff5f5;
+}
+
+/* === Alert Boxes === */
+.alert-box {
+  width: 100%;
+  padding: 11px 5px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 12px;
+  animation: slideDown 0.5s ease;
+}
+
+.alert-box.error {
+  background: #fdecea;
+  color: #b52b27;
+  border: 1px solid #f5c6cb;
+}
+
+.alert-box.success {
+  background: #e6f4ea;
+  color: #216e39;
+  border: 1px solid #c3e6cb;
+}
+
+/* === Button === */
+.btn {
+  width: 100%;
+  height: 42px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: #2b2a4c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #2b2a4c;
+  border: 2px solid #2b2a4c;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* === Footer Link === */
+.footer-link {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+.footer-link a {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-link .accent {
+  color: #5e5d8d;
+  font-weight: 600;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

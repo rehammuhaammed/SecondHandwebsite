@@ -1,0 +1,201 @@
+/* ===== Header ===== */
+header {
+    background-color: #ffffff;
+    color: #2B2A4C;
+    padding: 5px 30px;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+.com_name {
+    font-size: 2rem;
+    font-family: "Pacifico", cursive;
+    font-weight: bolder;
+    cursor: default;
+}
+
+/* Header Links */
+.links a {
+    text-decoration: none; 
+    color: #2B2A4C;
+    margin-right: 20px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #B31312; 
+    box-shadow: none;
+    transform: none;
+}
+
+/* User Icon */
+.links i.fa-user {
+    color: #2B2A4C;
+    transition: color 0.3s ease;
+}
+
+.links i.fa-user:hover {
+    color: #b52b27; 
+}
+
+/* Responsive Header */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        font-size: 1rem;
+    }
+    .links {
+        margin-top: 10px;
+    }
+    .links a {
+        margin-right: 10px;
+    }
+}
+
+.background {
+    background-image: url(../../../assets/1-7-1024x576.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    border-radius: 4px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center; 
+    /* align-items: center;     */
+}
+h1{
+    font-family: Dancing Script;
+    font-size: 2.5rem;
+    color: #ffffff;
+    background-color: #5e5d8d;
+    padding: 10px 15px;
+    border-radius:5px ;
+    grid-column: 1 / span 2;
+}
+/* ===== Form Container ===== */
+.sell_form {
+    background-color: #ffffff;
+    width: 50%; /* أكبر عشان يظهر واضح */
+    border-radius: 15px;
+    border: 1px #d1d1d1 solid;
+    padding: 35px 40px; /* زيادة الحشو */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 30px ;
+    /* max-height: 90vh; */
+    overflow-y: auto;
+}
+
+/* ===== Form Title ===== */
+.sell_form h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem; /* أكبر عنوان */
+    color: #ffffff;
+    background-color: #5e5d8d;
+    padding: 15px 20px; /* زيادة البادينج */
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* ===== Form Groups ===== */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* مسافة أكبر بين اللابل والانبوت */
+}
+
+/* ===== Input Fields ===== */
+.in {
+    height: 45px; /* أكبر */
+    border-radius: 10px;
+    border: 1px solid #dee2e2;
+    outline: none;
+    padding-left: 15px;
+    font-size: 1rem; /* خط أكبر */
+    transition: all 0.3s ease;
+}
+
+.in:focus {
+    border-color: #5e5d8d;
+    box-shadow: 0 0 8px rgba(94, 93, 141, 0.3);
+}
+
+/* ===== Labels ===== */
+label {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* ===== Field Error Messages ===== */
+.field-alert {
+    font-size: 0.9rem;
+    color: #d93025;
+    margin-top: 3px;
+}
+
+/* ===== Buttons ===== */
+
+
+.uploadLabel {
+    display: flex;
+    gap: 10px;
+}
+
+.uploadButton,
+.uploadbtn,
+.sub {
+    height: 45px;
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: #27265e;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%; 
+    margin-top: 20px;
+    border: none;
+}
+
+.uploadButton:hover,
+.uploadbtn:hover,
+.sub:hover {
+    background-color: #2a286c;
+
+}
+/* ===== General Form Message ===== */
+.form-message-bottom {
+    margin-top: 20px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.form-alert {
+    background-color: #ffdede;
+    color: #d93025;
+    border: 1px solid #d93025;
+}
+
+.form-alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #155724;
+}
+
+/* ===== Responsive ===== */

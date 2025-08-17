@@ -1,0 +1,16 @@
+<header>
+  <span routerLink="/welcome" class="com_name">CarCraze</span>
+  <span class="links">
+    <a routerLink="/mylist" routerLinkActive="active">My List</a>
+    <a routerLink="/wishlist" routerLinkActive="active">Wishlist</a>
+    <a routerLink="/purchases" routerLinkActive="active">Purchases</a>
+    <a routerLink="/feedbacks" routerLinkActive="active">FeedBacks</a>
+    <a routerLink="/notification" routerLinkActive="active">Notification</a>
+    <a routerLink="/profile" routerLinkActive="active">
+      <i class="fa-regular fa-user"></i>
+    </a>
+    <a (click)="logout()" class="hov log">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    </a>
+  </span>
+</header>

@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div class="page">
+
+    
+    <h1 class="page-title">Your WishList </h1>
+  <div *ngIf="userData$ | async as userData; else loading">
+
+
+    <div *ngIf="userData && userData.length > 0; else noProducts">
+      <div class="products-container">
+        <!-- رسالة النجاح -->
+          <div *ngIf="successMessage" class="success-msg">
+            {{ successMessage }}
+          </div>
+        <div class="container" *ngFor="let car of userData" (click)="viewDetails(car.id)" >
+          <div class="layer">
+            <div class="image">
+              <img [src]="car.image_url" alt="{{car.name}}" class="car_img">
+            </div>
+            <div class="info">
+              <p class="brand">
+                {{car.brand.toLocaleUpperCase()}}
+                <i class="fa-solid fa-heart" (click)="removeFromWishlist(car.id)"></i>
+              </p>
+              <p class="name">{{ car.model }}</p>
+              <p class="disprice"><del>{{ car.price + 50000 }} EGP</del></p>
+              <p class="price">{{ car.price }} EGP</p>
+              <span class="kilo"><i class="fa-regular fa-clock"></i>{{ car.kilometer }} KM</span>
+              <span class="year"><i class="fa-regular fa-calendar"></i>{{ car.year }}</span>
+              <span class="trans"><i class="fa-solid fa-code-branch"></i>{{ car.transmission }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- حالة عدم وجود منتجات -->
+  <ng-template #noProducts>
+    <div class="no-products">
+      <p>Your wishlist is empty 😔</p>
+      <p>Start adding cars you like to see them here!</p>
+      <a routerLink="/buy" class="add-product-btn">Browse Cars</a>
+    </div>
+  </ng-template>
+
+  <ng-template #loading>
+    <div class="typing-indicator">
+      <div class="typing-circle"></div>
+      <div class="typing-circle"></div>
+      <div class="typing-circle"></div>
+    </div>
+  </ng-template>
+
+</div>

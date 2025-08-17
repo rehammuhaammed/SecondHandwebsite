@@ -1,0 +1,56 @@
+<div class="all">
+  <app-header></app-header>
+
+  <div class="page">
+
+    
+    <h1 class="page-title">Your Purchased Cars</h1>
+
+    
+    <div *ngIf="userData$ | async as userData; else loading">
+
+      
+      <div *ngIf="userData && userData.length > 0; else noPurchases">
+       <div class="box">
+         <div class="container" *ngFor="let car of userData">
+
+          <div class="image">
+            <img [src]="car.image_url" alt="{{car.brand}}" class="car_img">
+          </div>
+          <div class="info">
+            <h2 class="brand">{{ car.brand }}</h2>
+            <p class="name">{{ car.model }}</p>
+            <p class="disprice"><del>{{ car.price + 50000 }} EGP</del></p>
+            <p class="price">{{ car.price }} EGP</p>
+            <div class="details">
+              <span class="kilo"><i class="fa-regular fa-clock"></i>{{ car.kilometer }} KM</span>
+              <span class="year"><i class="fa-regular fa-calendar"></i>{{ car.year }}</span>
+              <span class="trans"><i class="fa-solid fa-code-branch"></i>{{ car.transmission }}</span>
+            </div>
+          </div>
+        </div>
+       </div>
+      </div>
+
+      
+      <ng-template #noPurchases>
+        <div class="no-products">
+          <p>Oops! You haven't purchased any cars yet.</p>
+          <p>If you want to buy a car, click the button below to browse available cars.</p>
+          <a routerLink="/buy" class="add-product-btn">Browse Cars</a>
+        </div>
+      </ng-template>
+
+    </div>
+
+    <!-- مؤشر التحميل -->
+    <ng-template #loading>
+      <div class="typing-indicator">
+        <div class="typing-circle"></div>
+        <div class="typing-circle"></div>
+        <div class="typing-circle"></div>
+      </div>
+    </ng-template>
+
+  </div>
+</div>

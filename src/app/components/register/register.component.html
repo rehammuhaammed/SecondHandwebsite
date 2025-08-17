@@ -1,0 +1,90 @@
+<div class="page">
+  <div class="card">
+    <h1 class="title">Register</h1>
+
+    <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" novalidate>
+      <!-- Name -->
+      <div class="form-group">
+        <label class="label">Name</label>
+        <input
+          class="input"
+          type="text"
+          name="name"
+          [(ngModel)]="name"
+          required
+          minlength="3"
+          #nameRef="ngModel"
+        />
+        <div class="error-text" *ngIf="nameRef.invalid && nameRef.touched">
+          <span *ngIf="nameRef.errors?.['required']">Name is required.</span>
+          <span *ngIf="nameRef.errors?.['minlength']">At least 3 characters.</span>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="form-group">
+        <label class="label">Phone Number</label>
+        <input
+          class="input"
+          type="tel"
+          name="phone"
+          [(ngModel)]="phone_num"
+          required
+          pattern="^[0-9]{10,15}$"
+          #phoneRef="ngModel"
+        />
+        <div class="error-text" *ngIf="phoneRef.invalid && phoneRef.touched">
+          <span *ngIf="phoneRef.errors?.['required']">Phone is required.</span>
+          <span *ngIf="phoneRef.errors?.['pattern']">10–15 digits only.</span>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label class="label">Email</label>
+        <input
+          class="input"
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          required
+          email
+          #emailRef="ngModel"
+        />
+        <div class="error-text" *ngIf="emailRef.invalid && emailRef.touched">
+          <span *ngIf="emailRef.errors?.['required']">Email is required.</span>
+          <span *ngIf="emailRef.errors?.['email']">Enter a valid email.</span>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label class="label">Password</label>
+        <input
+          class="input"
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+          minlength="6"
+          #passRef="ngModel"
+        />
+        <div class="error-text" *ngIf="passRef.invalid && passRef.touched">
+          <span *ngIf="passRef.errors?.['required']">Password is required.</span>
+          <span *ngIf="passRef.errors?.['minlength']">At least 6 characters.</span>
+        </div>
+      </div>
+
+      
+      <div class="alert-box error" *ngIf="errorMessage">{{ errorMessage }}</div>
+      <div class="alert-box success" *ngIf="successMessage">{{ successMessage }}</div>
+
+      <!-- Submit -->
+      <button class="btn" type="submit" [disabled]="registerForm.invalid">Register</button>
+    </form>
+
+    <div class="footer-link">
+      <a href="#">Have an Account? <span class="accent">Login</span></a>
+    </div>
+  </div>
+</div>

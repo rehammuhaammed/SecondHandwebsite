@@ -15,7 +15,7 @@
             "outputPath": "dist/sechand",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "baseHref": "/SecondHandwebsite/",
+            "baseHref": "/",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],

@@ -11,7 +11,6 @@ A modern Angular-based web application for buying and selling cars, powered by F
 | Feedback System | Users can leave feedback for products or sellers. |
 | Chat System | Real-time messaging between users. |
 | Responsive Design | Works on desktop and mobile devices. |
-| Angular Universal (SSR) | Faster page loads and better SEO. |
 | Firebase Integration | Firestore database and authentication. |
 
 ## Tech Stack

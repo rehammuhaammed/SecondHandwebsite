@@ -107,7 +107,16 @@ export class ChatsComponent implements OnInit {
   }
 
   sendMessage(senderName: string): void {
-    if(!this.selectedUserId || !this.newMessage.trim() || !this.currentUser) return;
+   
+
+    if (!this.selectedUserId || !this.newMessage.trim() || !this.currentUser) {
+      console.warn("⚠️ Missing data:", {
+        selectedUserId: this.selectedUserId,
+        newMessage: this.newMessage,
+        currentUser: this.currentUser
+      });
+      return;
+    }
 
     const messageData = {
       senderId: this.currentUser,
@@ -116,64 +125,94 @@ export class ChatsComponent implements OnInit {
       timestamp: new Date().toISOString()
     };
 
-    const userIds = [this.currentUser, this.selectedUserId];
-    const userIds2 = [this.selectedUserId, this.currentUser];
+    // دايمًا نخزن userIds بالترتيب
+    const userIds = [this.currentUser, this.selectedUserId].sort();
+    
 
-    const sendToFirestore = (ids: string[]) => {
-      this.firestore.collection('chats', ref => ref.where('userIds', '==', ids))
-        .get().subscribe(querySnapshot => {
-          if(querySnapshot.size !== 0){
-            querySnapshot.forEach(doc => {
-              const docRef = this.firestore.collection('chats').doc(doc.id);
-              docRef.get().subscribe(snapshot => {
-                const currentMessages = snapshot.get('messages') || [];
-                const updatedMessages = [...currentMessages, messageData];
-                docRef.update({ messages: updatedMessages }).then(() => {
-                  this.messages.push(messageData.message);
-                  this.newMessage = '';
-                  
-                  this.firestore.collection('users').doc(this.selectedUserId ?? undefined)
-                    .collection('notification').add({
-                      ...messageData,
-                      message: `You have a new message`
-                    });
-                });
-              });
+    this.firestore.collection('chats', ref => ref.where('userIds', '==', userIds))
+      .get().subscribe(querySnapshot => {
+        
+
+        if (querySnapshot.size !== 0) {
+          
+
+          querySnapshot.forEach(doc => {
+         
+
+            const docRef = this.firestore.collection('chats').doc(doc.id);
+            docRef.get().subscribe(snapshot => {
+              const currentMessages = snapshot.get('messages') || [];
+              
+
+              const updatedMessages = [...currentMessages, messageData];
+              docRef.update({ messages: updatedMessages }).then(() => {
+               
+                this.messages.push(messageData.message);
+                this.newMessage = '';
+
+                // أضف إشعار للمستخدم التاني
+                this.firestore.collection('users').doc(this.selectedUserId ?? undefined)
+                  .collection('notification').add({
+                    ...messageData,
+                    message: `You have a new message`
+                  }).then(() => {
+                   
+                  }).catch(err => console.error("❌ Error adding notification:", err));
+              }).catch(err => console.error("❌ Error updating doc:", err));
             });
-          }
-        });
-    };
+          });
+        } else {
+          
 
-    sendToFirestore(userIds);
-    sendToFirestore(userIds2);
-
-    this.loadMessages();
+          this.firestore.collection('chats').add({
+            userIds: userIds,
+            messages: [messageData]
+          }).then(docRef => {
+           
+            this.messages.push(messageData.message);
+            this.newMessage = '';
+          }).catch();
+        }
+      }, err => {
+        
+      });
   }
 
-  loadMessages(): void {
-    if(!this.selectedUserId || !this.currentUser) return;
 
-    const userIds = [this.currentUser, this.selectedUserId];
-    const userIds2 = [this.selectedUserId, this.currentUser];
-    const allMessages: string[] = [];
-
-    const fetchMessages = (ids: string[]) => {
-      this.firestore.collection('chats', ref => ref.where('userIds', '==', ids))
-        .get().subscribe(querySnapshot => {
-          if(querySnapshot.size !== 0){
-            querySnapshot.forEach(doc => {
-              const messagesArray = doc.get('messages') || [];
-              const extractedMessages = messagesArray.map((msg: any) => msg.message);
-              allMessages.push(...extractedMessages);
-              this.messages = allMessages;
-            });
-          }
-        });
-    };
-
-    fetchMessages(userIds);
-    fetchMessages(userIds2);
+loadMessages(): void {
+  if (!this.selectedUserId || !this.currentUser) {
+    console.warn("⚠️ loadMessages skipped. Missing:", {
+      selectedUserId: this.selectedUserId,
+      currentUser: this.currentUser
+    });
+    return;
   }
+
+  const userIds = [this.currentUser, this.selectedUserId].sort();
+  
+
+  this.firestore.collection('chats', ref => ref.where('userIds', '==', userIds))
+    .get().subscribe(querySnapshot => {
+      
+
+      if (querySnapshot.size !== 0) {
+        querySnapshot.forEach(doc => {
+          
+          const messagesArray = doc.get('messages') || [];
+          
+
+          const extractedMessages = messagesArray.map((msg: any) => msg.message);
+          this.messages = extractedMessages;
+        });
+      } else {
+        
+        this.messages = [];
+      }
+    }, err => {
+     
+    });
+}
+
 
   resetMessages() {
     this.messages = [];
